@@ -15,12 +15,12 @@ export class TodosComponent implements OnInit {
   constructor(public http: HttpClient) { }
 
   ngOnInit() {
-    this.getLoadTodo();
     this.httpOptions = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json'
       })
     };
+    this.getLoadTodo();
   }
 
   getLoadTodo() {
@@ -32,7 +32,7 @@ export class TodosComponent implements OnInit {
   }
 
   onSaveTodo() {
-    if (this.description.length === 0) {
+    if (!this.description || this.description.length === 0) {
       alert('Digite a descrição ...');
     } else {
     this.http.post('/api/todo/create', {'description': this.description}, this.httpOptions)

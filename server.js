@@ -60,3 +60,5 @@ app.listen(process.env.PORT || 8080);
 
 //Ok
 console.log("App listening on port 8080");
+
+//nodemon server.js
