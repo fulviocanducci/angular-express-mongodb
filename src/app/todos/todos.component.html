@@ -1,0 +1,10 @@
+<p>
+  todos works!
+</p>
+<p>
+  <input type="text" name="description" [(ngModel)]="description" />
+  <button (click)="onSaveTodo()">Save</button>
+</p>
+<ul>
+  <li *ngFor="let todo of todos">{{todo.description}}</li>
+</ul>
